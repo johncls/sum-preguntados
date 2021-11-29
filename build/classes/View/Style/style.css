@@ -1,0 +1,80 @@
+
+/* 
+    Created on : 04-may-2018, 11:27:55
+    Author     : LebronCode
+*/
+
+.fondo{
+    -fx-background-color: greenyellow;
+}
+
+.font{
+    -fx-font-family: "Comic Sans MS bold";
+}
+
+.imagenfondog {
+    -fx-background-image: url('../Image/background.gif');
+    -fx-background-size: 1000 635;
+}
+
+.imagenfondo{
+    -fx-background-image: url('../Image/background.jpg');
+    -fx-background-size: 1000 625;
+}
+.imageInit{
+   -fx-background-image: url('../Image/background.gif');
+   -fx-background-position: center;
+   -fx-background-size: 1000 630;
+}
+.imagenfondoboton{
+    
+    -fx-background-image: url('../Image/background.gif');
+    -fx-background-position: center;
+    -fx-background-size: 1000 630;
+   
+}
+
+.imagenfondojuego{
+    -fx-background-image: url('../Image/backgroundImage.jpg');
+    -fx-background-size: 1000 640;
+}
+
+.imagenfondobotoncomodin{
+    -fx-background-image: url('../Image/boton2.png');
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-size: 100 100;
+       
+}
+
+.imagenfondobotoncomodindos{
+    -fx-background-image: url('../Image/boton.png');
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-size: 100 100;
+       
+}
+
+.imagenfondobotoncomodinTres{
+    -fx-background-image: url('../Image/boton3.png');
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-size: 100 100;
+       
+}
+
+.imagenfinal{
+    -fx-background-image: url('../Image/backgroundImage.jpg');
+    -fx-background-size: 1000 640;
+}
+
+.progress-bar > .bar{
+    -fx-background-color: linear-gradient(
+        from 0px .75em to .75em 0px,
+        repeat,
+        -fx-accent 0%,
+        -fx-accent 49%,
+        derive(-fx-accent, 30%) 50%,
+        derive(-fx-accent, 30%) 99%
+    );
+}

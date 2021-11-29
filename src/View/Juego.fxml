@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="panelJuego" prefHeight="640.0" prefWidth="1000.0" styleClass="imagenfondojuego" stylesheets="@../View/Style/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.JuegoController">
+   <children>
+      <MenuBar prefHeight="39.0" prefWidth="133.0" style="-fx-background-color: #20c4f4;">
+        <menus>
+          <Menu mnemonicParsing="false" text="Opciones">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#salirDelJuego" text="Salir del Juego" />
+            </items>
+          </Menu>
+        </menus>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </MenuBar>
+      <Button fx:id="btnComodinTiempo" layoutX="778.0" layoutY="14.0" mnemonicParsing="false" onAction="#lanzarComodinTiempo" prefHeight="97.0" prefWidth="94.0" style="-fx-background-color: transparent;" styleClass="imagenfondobotoncomodinTres" stylesheets="@../View/Style/style.css">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnComodinPersona" layoutX="892.0" layoutY="14.0" mnemonicParsing="false" onAction="#lanzarComodinPublico" prefHeight="97.0" prefWidth="94.0" style="-fx-background-color: transparent;" styleClass="imagenfondobotoncomodindos" stylesheets="@../View/Style/style.css">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnComodin50" layoutX="661.0" layoutY="14.0" mnemonicParsing="false" onAction="#lanzarComodin50" prefHeight="97.0" prefWidth="94.0" style="-fx-background-color: transparent;" styleClass="imagenfondobotoncomodin" stylesheets="@../View/Style/style.css">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnUno" layoutX="173.0" layoutY="497.0" mnemonicParsing="false" onAction="#responder" opacity="0.8" prefHeight="37.0" prefWidth="276.0" style="-fx-background-color: #20c4f4;" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnDos" layoutX="549.0" layoutY="497.0" mnemonicParsing="false" onAction="#responder" opacity="0.8" prefHeight="37.0" prefWidth="276.0" style="-fx-background-color: #20c4f4;" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnTres" layoutX="173.0" layoutY="568.0" mnemonicParsing="false" onAction="#responder" opacity="0.8" prefHeight="37.0" prefWidth="276.0" style="-fx-background-color: #20c4f4;" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnCuatro" layoutX="549.0" layoutY="568.0" mnemonicParsing="false" onAction="#responder" opacity="0.8" prefHeight="37.0" prefWidth="276.0" style="-fx-background-color: #20c4f4;" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Label fx:id="lblPregunta" alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="176.0" layoutY="384.0" opacity="0.48" prefHeight="89.0" prefWidth="652.0" style="-fx-background-color: #20c4f4;" text="Texto Prueba " textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+         <effect>
+            <Glow level="0.38" />
+         </effect>
+      </Label>
+      <ProgressBar fx:id="pBar" layoutX="172.0" layoutY="345.0" prefHeight="27.0" prefWidth="661.0" progress="0.45" />
+      <Label fx:id="lblNumeroPregunta" alignment="TOP_CENTER" layoutX="479.0" layoutY="-4.0" prefHeight="38.0" prefWidth="41.0" text="1" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <BarChart fx:id="bChart" alternativeColumnFillVisible="true" barGap="5.0" horizontalGridLinesVisible="false" layoutX="1.0" layoutY="44.0" legendVisible="false" prefHeight="292.0" prefWidth="306.0" style="-fx-background-color: transparent;" title="Comodín del Público" visible="false">
+        <xAxis>
+          <CategoryAxis fx:id="X" animated="false" label="Respuestas" tickLabelFill="WHITE" tickLabelRotation="-32.3">
+               <tickLabelFont>
+                  <Font name="System Bold" size="14.0" />
+               </tickLabelFont></CategoryAxis>
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="Y" autoRanging="false" prefHeight="230.0" prefWidth="28.0" side="LEFT" style="-fx-background-color: #20c4f4;" tickLabelFill="WHITE" />
+        </yAxis>
+      </BarChart>
+      <Label fx:id="lbl100" layoutX="377.0" layoutY="139.0" text="100" textFill="WHITE">
+         <font>
+            <Font name="Bodoni MT Poster Compressed" size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl500" layoutX="425.0" layoutY="139.0" text="500" textFill="WHITE">
+         <font>
+            <Font name="Bodoni MT Poster Compressed" size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl1000" layoutX="464.0" layoutY="139.0" text="1000" textFill="WHITE">
+         <font>
+            <Font name="Bodoni MT Poster Compressed" size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="lb2000" layoutX="504.0" layoutY="139.0" text="2000" textFill="WHITE">
+         <font>
+            <Font name="Bodoni MT Poster Compressed" size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl5000" layoutX="549.0" layoutY="139.0" text="5000" textFill="WHITE">
+         <font>
+            <Font name="Bodoni MT Poster Compressed" size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl30000" layoutX="694.0" layoutY="139.0" text="30000" textFill="WHITE">
+         <font>
+            <Font name="Bodoni MT Poster Compressed" size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl10000" layoutX="595.0" layoutY="139.0" text="10000" textFill="WHITE">
+         <font>
+            <Font name="Bodoni MT Poster Compressed" size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl15000" layoutX="649.0" layoutY="139.0" text="15000" textFill="WHITE">
+         <font>
+            <Font name="Bodoni MT Poster Compressed" size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl50000" layoutX="746.0" layoutY="139.0" text="50000" textFill="WHITE">
+         <font>
+            <Font name="Bodoni MT Poster Compressed" size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl100000" layoutX="376.0" layoutY="174.0" text="100000" textFill="WHITE">
+         <font>
+            <Font name="Bodoni MT Poster Compressed" size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl200000" layoutX="437.0" layoutY="174.0" text="200000" textFill="WHITE">
+         <font>
+            <Font name="Bodoni MT Poster Compressed" size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl500000" layoutX="496.0" layoutY="174.0" text="500000" textFill="WHITE">
+         <font>
+            <Font name="Bodoni MT Poster Compressed" size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl1000000" layoutX="565.0" layoutY="172.0" text="1000000" textFill="WHITE">
+         <font>
+            <Font name="Bodoni MT Poster Compressed" size="43.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="panelFinal" prefHeight="640.0" prefWidth="1000.0" styleClass="imagenfinal" stylesheets="@../View/Style/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.JuegoTerminadoController">
+   <children>
+      <Label fx:id="lblTitulo" layoutX="34.0" layoutY="24.0" prefHeight="101.0" prefWidth="431.0" text="FELICITACIONES... " textFill="WHITE">
+         <font>
+            <Font name="Bodoni MT Poster Compressed" size="85.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTitulo11" layoutX="34.0" layoutY="122.0" prefHeight="417.0" prefWidth="924.0" text="Hoy no pudiste completar, preguntados pero te quedan muchas mas oportunidades de seguir aprendiendo y sumando puntos " wrapText="true">
+         <font>
+            <Font name="Bodoni MT Poster Compressed" size="85.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.3901734104046243" centerY="0.5049261083743842" radius="0.5">
+               <stops>
+                  <Stop color="#d3d2da" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <Button layoutX="796.0" layoutY="24.0" mnemonicParsing="false" onAction="#volverAEmpezar" opacity="0.79" prefHeight="78.0" prefWidth="190.0" style="-fx-background-color: #20c4f4;" text="Volver A Jugar" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Bodoni MT Condensed Bold" size="29.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <Bloom threshold="0.59" />
+         </effect>
+      </Button>
+      <Label fx:id="lblTitulo1" layoutX="34.0" layoutY="499.0" prefHeight="101.0" prefWidth="190.0" text="Puntaje:" textFill="WHITE">
+         <font>
+            <Font name="Bodoni MT Poster Compressed" size="85.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblPuntaje" layoutX="207.0" layoutY="499.0" prefHeight="101.0" prefWidth="746.0" text="0" textFill="WHITE">
+         <font>
+            <Font name="Bodoni MT Poster Compressed" size="85.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

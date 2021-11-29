@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="panelInstrucciones" prefHeight="640.0" prefWidth="1000.0" styleClass="imagenfinal" stylesheets="@../View/Style/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.InstruccionesController">
+   <children>
+      <Label layoutX="21.0" layoutY="116.0" prefHeight="423.0" prefWidth="959.0" text="En este juego deberás ir respondiendo preguntas para conseguir la recompensa de la sabiduria " textFill="#fffefe" wrapText="true">
+         <font>
+            <Font name="Bodoni MT" size="54.0" />
+         </font>
+      </Label>
+      <Label layoutX="27.0" layoutY="99.0" prefHeight="79.0" prefWidth="591.0" text="COMO JUGAMOS" textFill="#f5f5f5" wrapText="true">
+         <font>
+            <Font name="Bodoni MT Poster Compressed" size="67.0" />
+         </font>
+      </Label>
+      <Button layoutX="37.0" layoutY="590.0" mnemonicParsing="false" onAction="#irAtras" prefHeight="33.0" prefWidth="84.0" style="-fx-background-color: #20c4f4;" text="Atrás" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect>
+      </Button>
+   </children>
+</AnchorPane>

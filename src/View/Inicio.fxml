@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.net.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="panelPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.InicioController">
+   <children>
+      <MenuBar prefHeight="23.0" prefWidth="1000.0" AnchorPane.bottomAnchor="617.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Opciones">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#salir" text="Salir" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Ayuda">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#verInstrucciones" text="Cómo Jugar" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <SplitPane layoutY="30.0" prefHeight="610.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="458.0" prefWidth="797.0" styleClass="imageInit" stylesheets="@../View/Style/style.css" SplitPane.resizableWithParent="false">
+               <children>
+                  <Button alignment="CENTER" layoutX="45.0" layoutY="454.0" mnemonicParsing="false" onAction="#comenzarJuego" prefHeight="58.0" prefWidth="520.0" style="-fx-background-color: #20c4f4;" stylesheets="@../View/Style/style.css" text="Comenzar A Jugar" textFill="#f5f5f5" AnchorPane.bottomAnchor="96.0" AnchorPane.topAnchor="454.0">
+                     <font>
+                        <Font name="Century Gothic Bold Italic" size="29.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <Bloom threshold="0.8" />
+                     </effect>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Button>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
