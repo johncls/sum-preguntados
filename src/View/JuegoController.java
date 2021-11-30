@@ -203,57 +203,6 @@ public class JuegoController implements Initializable {
         task.stop();
     }
 
-    @FXML
-    private void lanzarComodinPublico(ActionEvent event) {
-        btnComodinPersona.setDisable(true);
-        bChart.setVisible(true);
-        int correcto;
-        Random rn = new Random();
-        int porcentaje1 = rn.nextInt(40) + 40;
-        int porcentaje2 = 80 - porcentaje1;
-        int porcentaje3 = 90 - (porcentaje1 + porcentaje2);
-        int porcentaje4 = 100 - (porcentaje1 + porcentaje2 + porcentaje3);
-
-        int[] porcentajes = {porcentaje1, porcentaje2, porcentaje3, porcentaje4};
-
-        XYChart.Series set1 = new XYChart.Series();
-
-        if (!questionOne.isEmpty()) {
-            correcto = questionOne.get(aleatorio).getCorrecta();
-        } else if (!questionTwo.isEmpty()) {
-            correcto = questionTwo.get(aleatorio).getCorrecta();
-        } else {
-            correcto = questionThree.get(aleatorio).getCorrecta();
-        }
-
-        if (correcto == 0) {
-            set1.getData().add(new XYChart.Data("a)", porcentajes[0]));
-            set1.getData().add(new XYChart.Data("b)", porcentajes[1]));
-            set1.getData().add(new XYChart.Data("c)", porcentajes[3]));
-            set1.getData().add(new XYChart.Data("d)", porcentajes[2]));
-        }
-        if (correcto == 1) {
-            set1.getData().add(new XYChart.Data("a)", porcentajes[1]));
-            set1.getData().add(new XYChart.Data("b)", porcentajes[0]));
-            set1.getData().add(new XYChart.Data("c)", porcentajes[3]));
-            set1.getData().add(new XYChart.Data("d)", porcentajes[2]));
-        }
-        if (correcto == 2) {
-            set1.getData().add(new XYChart.Data("a)", porcentajes[3]));
-            set1.getData().add(new XYChart.Data("b)", porcentajes[1]));
-            set1.getData().add(new XYChart.Data("c)", porcentajes[0]));
-            set1.getData().add(new XYChart.Data("d)", porcentajes[2]));
-        }
-        if (correcto == 3) {
-            set1.getData().add(new XYChart.Data("a)", porcentajes[2]));
-            set1.getData().add(new XYChart.Data("b)", porcentajes[1]));
-            set1.getData().add(new XYChart.Data("c)", porcentajes[3]));
-            set1.getData().add(new XYChart.Data("d)", porcentajes[0]));
-        }
-
-        bChart.getData().addAll(set1);
-        
-    }
 
     @FXML
     private void lanzarComodin50(ActionEvent event) {
@@ -564,5 +513,56 @@ public class JuegoController implements Initializable {
             a.setContentText("La cuarta respuesta era la correcta: "+btnCuatro.getText()); 
         }
         a.show();
+    }
+
+    @FXML
+    private void lanzarPorcentaje(ActionEvent event) {
+        btnComodinPersona.setDisable(true);
+        bChart.setVisible(true);
+        int correcto;
+        Random rn = new Random();
+        int porcentaje1 = rn.nextInt(40) + 40;
+        int porcentaje2 = 80 - porcentaje1;
+        int porcentaje3 = 90 - (porcentaje1 + porcentaje2);
+        int porcentaje4 = 100 - (porcentaje1 + porcentaje2 + porcentaje3);
+
+        int[] porcentajes = {porcentaje1, porcentaje2, porcentaje3, porcentaje4};
+
+        XYChart.Series set1 = new XYChart.Series();
+
+        if (!questionOne.isEmpty()) {
+            correcto = questionOne.get(aleatorio).getCorrecta();
+        } else if (!questionTwo.isEmpty()) {
+            correcto = questionTwo.get(aleatorio).getCorrecta();
+        } else {
+            correcto = questionThree.get(aleatorio).getCorrecta();
+        }
+
+        if (correcto == 0) {
+            set1.getData().add(new XYChart.Data("a)", porcentajes[0]));
+            set1.getData().add(new XYChart.Data("b)", porcentajes[1]));
+            set1.getData().add(new XYChart.Data("c)", porcentajes[3]));
+            set1.getData().add(new XYChart.Data("d)", porcentajes[2]));
+        }
+        if (correcto == 1) {
+            set1.getData().add(new XYChart.Data("a)", porcentajes[1]));
+            set1.getData().add(new XYChart.Data("b)", porcentajes[0]));
+            set1.getData().add(new XYChart.Data("c)", porcentajes[3]));
+            set1.getData().add(new XYChart.Data("d)", porcentajes[2]));
+        }
+        if (correcto == 2) {
+            set1.getData().add(new XYChart.Data("a)", porcentajes[3]));
+            set1.getData().add(new XYChart.Data("b)", porcentajes[1]));
+            set1.getData().add(new XYChart.Data("c)", porcentajes[0]));
+            set1.getData().add(new XYChart.Data("d)", porcentajes[2]));
+        }
+        if (correcto == 3) {
+            set1.getData().add(new XYChart.Data("a)", porcentajes[2]));
+            set1.getData().add(new XYChart.Data("b)", porcentajes[1]));
+            set1.getData().add(new XYChart.Data("c)", porcentajes[3]));
+            set1.getData().add(new XYChart.Data("d)", porcentajes[0]));
+        }
+
+        bChart.getData().addAll(set1);
     }
 }

@@ -29,7 +29,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="btnComodinPersona" layoutX="892.0" layoutY="14.0" mnemonicParsing="false" onAction="#lanzarComodinPublico" prefHeight="97.0" prefWidth="94.0" style="-fx-background-color: transparent;" styleClass="imagenfondobotoncomodindos" stylesheets="@../View/Style/style.css">
+      <Button fx:id="btnComodinPersona" layoutX="892.0" layoutY="14.0" mnemonicParsing="false" onAction="#lanzarPorcentaje" prefHeight="97.0" prefWidth="94.0" style="-fx-background-color: transparent;" styleClass="imagenfondobotoncomodindos" stylesheets="@../View/Style/style.css">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
@@ -80,7 +80,7 @@
             <Font name="System Bold" size="30.0" />
          </font>
       </Label>
-      <BarChart fx:id="bChart" alternativeColumnFillVisible="true" barGap="5.0" horizontalGridLinesVisible="false" layoutX="1.0" layoutY="44.0" legendVisible="false" prefHeight="292.0" prefWidth="306.0" style="-fx-background-color: transparent;" title="Comodín del Público" visible="false">
+      <BarChart fx:id="bChart" alternativeColumnFillVisible="true" barGap="5.0" horizontalGridLinesVisible="false" layoutX="1.0" layoutY="44.0" legendVisible="false" prefHeight="292.0" prefWidth="306.0" style="-fx-background-color: transparent;" title="Porcentaje Respuesta " visible="false">
         <xAxis>
           <CategoryAxis fx:id="X" animated="false" label="Respuestas" tickLabelFill="WHITE" tickLabelRotation="-32.3">
                <tickLabelFont>
