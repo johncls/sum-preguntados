@@ -17,8 +17,8 @@ import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
- *
- * @author jonce
+ * Controlador de la vista Juego Terminado
+ * @author John Alexander Pinilla Celis
  */
 public class JuegoTerminadoController implements Initializable {
 
@@ -42,16 +42,21 @@ public class JuegoTerminadoController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }
-    
+    /**
+     * Metodo en donde se ve reflejado la puntuaciòn
+     * @param titulo 
+     */
     public void setTitulo(String titulo) {
         lblPuntaje.setText(titulo);
     }
 
+    /**
+     * MEtodo para lanzar el juego de nuevo
+     * @throws IOException 
+     */
     @FXML
     public void volverAEmpezar() throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("/View/Inicio.fxml"));
         panelFinal.getChildren().setAll(pane);
     }
-    
-    
 }

@@ -9,14 +9,18 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 /**
- *
+ * Clase con las preguntas almacenadas 
  * @author 
  * john Alexander Pinilla Celis
  */
 public class Preguntas {
     
+    //Observbale List se hace para añadir las preguntas, produce realizar un seguimiento de los cambios cuando se producen
     public static ObservableList<GetPregunta> preguntas;
     
+    /**
+     * Constructor de las preguntas
+     */
     public Preguntas(){
         
         preguntas = FXCollections.observableArrayList();
@@ -69,6 +73,10 @@ public class Preguntas {
     }
     
     
+    /**
+     * Metodo que retorna el tamaño de las preguntas
+     * @return string preguntas
+     */
      public String toString(){
         
           String visualizar = "";
@@ -82,6 +90,10 @@ public class Preguntas {
         
     }
 
+     /**
+      * Observable que retonar las preguntas añadidas 
+      * @return  preguntas
+      */
     public ObservableList<GetPregunta> getPreguntas() {
         return preguntas;
     }

@@ -10,7 +10,7 @@ import java.util.Objects;
 import java.util.Random;
 
 /**
- *
+ *Clase que obtiene las preguntas y su respectivo nivel de dificultad
  * @author John alexander pinilla celis
  */
 public class GetPregunta {
@@ -20,6 +20,13 @@ public class GetPregunta {
     private final int correcta;
     private final int dificultad;
 
+    /**
+     * Constructor de la clase
+     * @param pregunta string con las preguntas a obtener
+     * @param respuestas array con las respuestas a obtener 
+     * @param correcta entero que validad si la respuesta es correcta 
+     * @param dificultad  entero que obteine la dificultad de la pregunta
+     */
     public GetPregunta(String pregunta, String[] respuestas, int correcta, int dificultad) {
         this.pregunta = pregunta;
         this.respuestas = respuestas;
@@ -27,32 +34,60 @@ public class GetPregunta {
         this.dificultad = dificultad;
     }
 
+    /**
+     * Metodo que retorna la pregunta 
+     * @return  pregunta
+     */
     public String getPregunta() {
         return pregunta;
     }
 
+    /**
+     * Metodo que envia la pregunta 
+     * @param pregunta 
+     */
     public void setPregunta(String pregunta) {
         this.pregunta = pregunta;
     }
 
+    /***
+     * Metodo que retorna la dificultad
+     * @return 
+     */
     public int getDificultad() {
         return dificultad;
     }
 
+    /**
+     * Metodo que se encarga de obtener la respuesta correcta
+     * @return  respuesta correcta
+     */
     public int getCorrecta() {
         return correcta;
     }
 
+    /***
+     * Metodo que se encarga de obtener las respuestas
+     * @return respuestas
+     */
     public String[] getRespuestas() {
         return respuestas;
     }
     
-    
+    /**
+     * Metodo que llama al objecto y lo representa en un valor de texto
+     * @return pregutnas 
+     */
     @Override
     public String toString() {
         return pregunta;
     }
 
+    /**
+     * Metodo que se encarga de la validacion de la pregunta
+     * @param obj Objecto con la respuesta 
+     * @return boolean
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

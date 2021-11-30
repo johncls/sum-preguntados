@@ -20,13 +20,15 @@ import javafx.stage.Stage;
 
 /**
  * FXML Controller class
- *
- * @author jonce
+ * Controlador de la vista inicial del juego
+ * @author John Alexander Pinilla Celis
  */
 public class InicioController implements Initializable {
 
+    //Intancia para obtner las preguntas
     Preguntas resultQuestions = new Preguntas();
     
+    //Atributo del pantalla principal
     @FXML
     private AnchorPane panelPrincipal;
 
@@ -40,22 +42,34 @@ public class InicioController implements Initializable {
         // TODO
     }    
 
+    /**
+     * Metodo de salir del juego
+     * @param event 
+     */
     @FXML
     private void salir(ActionEvent event) {
         System.exit(0);
     }
 
+    /**
+     * Metodo la redirigir a la vista ver instrucciones
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void verInstrucciones(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("/View/Instrucciones.fxml"));
         panelPrincipal.getChildren().setAll(pane);
     }
 
+    /**
+     * Metodo al momento de hacer clic para comenzar el juego y redirección al juego
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void comenzarJuego(ActionEvent event) throws IOException {
-        
-        //System.out.print(resultQuestions.getPreguntas());
-        
+             
         if (resultQuestions.getPreguntas().size() != 15) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");

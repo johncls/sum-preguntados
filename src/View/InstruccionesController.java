@@ -16,11 +16,12 @@ import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
- *
- * @author jonce
+ * Controlador de la vista Instrucciones
+ * @author John Alexander Pinilla Celis
  */
 public class InstruccionesController implements Initializable {
 
+    //Panel para las instrucciones
     @FXML
     private AnchorPane panelInstrucciones;
 
@@ -32,6 +33,11 @@ public class InstruccionesController implements Initializable {
         // TODO
     }    
 
+    /**
+     * Metodo encargado de redireccionar al inicio del juego
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void irAtras(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("/View/Inicio.fxml"));

@@ -44,8 +44,8 @@ import javafx.util.Duration;
 
 /**
  * FXML Controller class
- *
- * @author jonce
+ * Controlador de la vista del juego
+ * @author John Alexnader Pinilla Celis
  */
 public class JuegoController implements Initializable {
 
@@ -61,6 +61,7 @@ public class JuegoController implements Initializable {
     private Timeline task;
     private int contadorPregunta = 1;
     private DropShadow shadow, shadowRed;
+    
     // create a alert
     Alert a = new Alert(AlertType.NONE);
     
@@ -190,6 +191,11 @@ public class JuegoController implements Initializable {
         jtController = ultimaVista.<JuegoTerminadoController>getController();
     }    
 
+    /**
+     * MEtodo encargado del salir del juego
+     * @param event ActionEvent
+     * @throws IOException 
+     */
     @FXML
     private void salirDelJuego(ActionEvent event) throws IOException {
         task.stop();
@@ -197,6 +203,10 @@ public class JuegoController implements Initializable {
         panelJuego.getChildren().add(pane);
     }
 
+    /**
+     * MEtodo encargado de activar el boton comidin del tiempo
+     * @param event 
+     */
     @FXML
     private void lanzarComodinTiempo(ActionEvent event) {
         btnComodinTiempo.setDisable(true);
@@ -204,6 +214,10 @@ public class JuegoController implements Initializable {
     }
 
 
+    /**
+     * Metodo encargado de ejecutar el botón 50 - 50
+     * @param event 
+     */
     @FXML
     private void lanzarComodin50(ActionEvent event) {
         btnComodin50.setDisable(true);
@@ -235,8 +249,15 @@ public class JuegoController implements Initializable {
         }
     }
 
+    /**
+     * Metodo encargado de validar las respuestas
+     * @param event
+     * @throws IOException
+     * @throws InterruptedException 
+     */
     @FXML
     private void responder(ActionEvent event) throws IOException, InterruptedException {
+        
         if (event.getSource() == btnUno) {
             //System.out.println((Button)e.getSource());
             if (!questionOne.isEmpty() && questionOne.get(aleatorio).getCorrecta() == 0) {
@@ -254,8 +275,8 @@ public class JuegoController implements Initializable {
                 myFlag = 1;
 
             }
-
         }
+        
         if (event.getSource() == btnDos) {
             if (!questionOne.isEmpty() && questionOne.get(aleatorio).getCorrecta() == 1) {
                 siguientePreguntaFacil();
@@ -273,6 +294,7 @@ public class JuegoController implements Initializable {
             }
 
         }
+        
         if (event.getSource() == btnTres) {
             if (!questionOne.isEmpty() && questionOne.get(aleatorio).getCorrecta() == 2) {
                 siguientePreguntaFacil();
@@ -290,6 +312,7 @@ public class JuegoController implements Initializable {
             }
 
         }
+        
         if (event.getSource() == btnCuatro) {
             if (!questionOne.isEmpty() && questionOne.get(aleatorio).getCorrecta() == 3) {
                 siguientePreguntaFacil();
@@ -320,8 +343,10 @@ public class JuegoController implements Initializable {
         bChart.setVisible(false);
     }
 
-    
-    //Metodo para rellenar las respuestas con el grado de dificulta uno
+    /**
+     * Metodo para rellenar las respuestas con el grado de dificulta uno
+     * @param aleatorio entero 
+     */
     public void rellenoD1(int aleatorio) {
         lblPregunta.setText(questionOne.get(aleatorio).getPregunta());
         btnUno.setText(questionOne.get(aleatorio).getRespuestas()[0]);
@@ -329,7 +354,11 @@ public class JuegoController implements Initializable {
         btnTres.setText(questionOne.get(aleatorio).getRespuestas()[2]);
         btnCuatro.setText(questionOne.get(aleatorio).getRespuestas()[3]);
     }
-    //Metodo para rellenar las respuestas con el grado de dificulta dos
+    
+    /**
+     *Metodo para rellenar las respuestas con el grado de dificulta dos 
+     * @param aleatorio 
+     */
     public void rellenoD2(int aleatorio) {
         lblPregunta.setText(questionTwo.get(aleatorio).getPregunta());
         btnUno.setText(questionTwo.get(aleatorio).getRespuestas()[0]);
@@ -338,7 +367,10 @@ public class JuegoController implements Initializable {
         btnCuatro.setText(questionTwo.get(aleatorio).getRespuestas()[3]);
     }
 
-    //Metodo para rellenar las respuestas con el grado de dificulta tres
+    /**
+     * Metodo para rellenar las respuestas con el grado de dificulta tres
+     * @param aleatorio 
+     */
     public void rellenoD3(int aleatorio) {
         lblPregunta.setText(questionThree.get(aleatorio).getPregunta());
         btnUno.setText(questionThree.get(aleatorio).getRespuestas()[0]);
@@ -347,7 +379,9 @@ public class JuegoController implements Initializable {
         btnCuatro.setText(questionThree.get(aleatorio).getRespuestas()[3]);
     }
     
-    //Esto es para hacer una transicion entre scenes
+    /**
+     * MEtodo encargado de hacer una transicion entre una escena a otra
+     */
     private void makeFadeOut() {
         FadeTransition fTransition = new FadeTransition();
         fTransition.setDuration((Duration.millis(1000)));
@@ -365,7 +399,10 @@ public class JuegoController implements Initializable {
         fTransition.play();
     }
     
-    //Aqui se cambia de escena, en los otros solo se cambia el contenido.
+    /**
+     * Metodo encargado de cambiar de escena, en los otros solo se cambia el contenido.
+     * @throws IOException 
+     */
     private void ultimaEscena() throws IOException {
 
         Scene newScene = new Scene(root);
@@ -374,7 +411,10 @@ public class JuegoController implements Initializable {
 
         curStage.setScene(newScene);
     }
-    //Metodo que esvalua y asigna la siguiente pregunta 
+    
+    /**
+     * Metodo que esvalua y asigna la siguiente pregunta
+     */
     public void siguientePreguntaFacil() {
         questionOne.remove(aleatorio);
         if (questionOne.size() == 0) {
@@ -388,7 +428,9 @@ public class JuegoController implements Initializable {
         }
     }
     
-    //Metodo que asigna la siguiente pregunta con un grado de complejidad
+    /**
+     * Metodo que esvalua y asigna la siguiente pregunta
+     */
     public void siguientePreguntaMedia() {
         questionTwo.remove(aleatorio);
         if (questionTwo.isEmpty()) {
@@ -400,7 +442,12 @@ public class JuegoController implements Initializable {
         }
 
     }
-    //Metodo que asigna llaa siguiente pregunta con grado de complejidad mayor
+    
+    /**
+     * Metodo que asigna llaa siguiente pregunta con grado de complejidad mayor
+     * @throws InterruptedException
+     * @throws IOException 
+     */
     public void siguientePreguntaDificil() throws InterruptedException, IOException {
         questionThree.remove(aleatorio);
         if (questionThree.isEmpty()) {
@@ -415,7 +462,9 @@ public class JuegoController implements Initializable {
         }
     }
     
-    //Metodo para marcar los premios e ir contando
+    /**
+     * Metodo para marcar los premios e ir contando las repuestas correctas
+     */
     public void marcaPremio() {
             if (myFlag == 1) {
                         if (contadorPregunta < 1) {
@@ -487,6 +536,12 @@ public class JuegoController implements Initializable {
         }
     }
     
+    /**
+     * Metodo para traer las pesuesta verdadera 
+     * @param questionOne Array pregunas nivel uno
+     * @param questionTwo Array pregunas nivel dos
+     * @param questionThree Array pregunas nivel tres
+     */
     public void ResultAlert(ArrayList<GetPregunta> questionOne, ArrayList<GetPregunta> questionTwo, ArrayList<GetPregunta> questionThree)
     {
         int resultOk = 0;
@@ -515,6 +570,10 @@ public class JuegoController implements Initializable {
         a.show();
     }
 
+    /**
+     * Metodo encargado de ejecutarse cuando se da click en el boton porcentaje
+     * @param event 
+     */
     @FXML
     private void lanzarPorcentaje(ActionEvent event) {
         btnComodinPersona.setDisable(true);

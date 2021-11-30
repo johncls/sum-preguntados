@@ -25,6 +25,7 @@ public class Main  extends Application
       
     @Override
     public void start(Stage stage) throws Exception {
+        //Inicio del aplicativo
         try {
             
             FXMLLoader loader = new FXMLLoader();
@@ -47,6 +48,7 @@ public class Main  extends Application
     }
 
     /**
+     * metodo estatico de main 
      * @param args the command line arguments
      */
     public static void main(String[] args) {
