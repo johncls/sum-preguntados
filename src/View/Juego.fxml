@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.chart.*?>
@@ -12,7 +13,7 @@
 
 <AnchorPane id="AnchorPane" fx:id="panelJuego" prefHeight="640.0" prefWidth="1000.0" styleClass="imagenfondojuego" stylesheets="@../View/Style/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.JuegoController">
    <children>
-      <MenuBar prefHeight="39.0" prefWidth="133.0" style="-fx-background-color: #20c4f4;">
+      <MenuBar prefHeight="39.0" prefWidth="133.0" style="-fx-background-color: #20c4f4;" styleClass="optionMenu">
         <menus>
           <Menu mnemonicParsing="false" text="Opciones">
             <items>
@@ -23,6 +24,9 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
       </MenuBar>
       <Button fx:id="btnComodinTiempo" layoutX="778.0" layoutY="14.0" mnemonicParsing="false" onAction="#lanzarComodinTiempo" prefHeight="97.0" prefWidth="94.0" style="-fx-background-color: transparent;" styleClass="imagenfondobotoncomodinTres" stylesheets="@../View/Style/style.css">
          <cursor>

@@ -5,7 +5,13 @@
 */
 
 .fondo{
-    -fx-background-color: greenyellow;
+    -fx-background-color: 
+        #090a0c,
+        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+        linear-gradient(#20262b, #191d22),
+        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
 }
 
 .font{
@@ -13,29 +19,70 @@
 }
 
 .imagenfondog {
-    -fx-background-image: url('../Image/background.gif');
+    -fx-background-color: 
+        #090a0c,
+        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+        linear-gradient(#20262b, #191d22),
+        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
     -fx-background-size: 1000 635;
 }
 
 .imagenfondo{
-    -fx-background-image: url('../Image/background.jpg');
+    -fx-background-color: 
+        #090a0c,
+        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+        linear-gradient(#20262b, #191d22),
+        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
     -fx-background-size: 1000 625;
 }
 .imageInit{
-   -fx-background-image: url('../Image/background.gif');
+    -fx-background-color: 
+        #090a0c,
+        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+        linear-gradient(#20262b, #191d22),
+        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-font-family: "Arial";
+    -fx-text-fill: linear-gradient(white, #d0d0d0);
+    -fx-font-size: 12px;
+    -fx-padding: 10 20 10 20;
    -fx-background-position: center;
+   
    -fx-background-size: 1000 630;
+}
+
+.imageInitTwo {
+    -fx-background-image: url('../Image/ninosaprendiendo.png');
 }
 .imagenfondoboton{
     
-    -fx-background-image: url('../Image/background.gif');
-    -fx-background-position: center;
-    -fx-background-size: 1000 630;
+    -fx-background-color: 
+        #3c7fb1,
+        linear-gradient(#fafdfe, #e8f5fc),
+        linear-gradient(#eaf6fd 0%, #d9f0fc 49%, #bee6fd 50%, #a7d9f5 100%);
+    -fx-background-insets: 0,1,2;
+    -fx-background-radius: 3,2,1;
+    -fx-padding: 10 30 10 30;
+    -fx-text-fill: black;
+    -fx-font-size: 14px;
    
 }
 
 .imagenfondojuego{
-    -fx-background-image: url('../Image/backgroundImage.jpg');
+    -fx-background-color: 
+        #090a0c,
+        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+        linear-gradient(#20262b, #191d22),
+        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
     -fx-background-size: 1000 640;
 }
 
@@ -64,7 +111,13 @@
 }
 
 .imagenfinal{
-    -fx-background-image: url('../Image/backgroundImage.jpg');
+    -fx-background-color: 
+        #090a0c,
+        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+        linear-gradient(#20262b, #191d22),
+        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
     -fx-background-size: 1000 640;
 }
 
@@ -77,4 +130,7 @@
         derive(-fx-accent, 30%) 50%,
         derive(-fx-accent, 30%) 99%
     );
+}
+.optionMenu {
+    -fx-text-color: red;
 }

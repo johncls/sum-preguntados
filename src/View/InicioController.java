@@ -6,15 +6,22 @@
 package View;
 
 import Models.Preguntas;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Group;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -28,6 +35,9 @@ public class InicioController implements Initializable {
     //Intancia para obtner las preguntas
     Preguntas resultQuestions = new Preguntas();
     
+    //Stage
+    Stage stage;
+    
     //Atributo del pantalla principal
     @FXML
     private AnchorPane panelPrincipal;
@@ -40,6 +50,35 @@ public class InicioController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        //Creating an image 
+      Image image = null;  
+      
+        try {
+            image = new Image(new FileInputStream("src/View/Image/ninosaprendiendo.png"));
+            
+            //Setting the image view 
+            ImageView imageView = new ImageView(image); 
+            //Setting the position of the image 
+            imageView.setX(50); 
+            imageView.setY(25); 
+
+            //setting the fit height and width of the image view 
+            imageView.setFitHeight(455); 
+            imageView.setFitWidth(500); 
+
+            //Setting the preserve ratio of the image view 
+            imageView.setPreserveRatio(true);  
+            //Creating a Group object  
+            Group root = new Group(imageView);  
+
+            //Creating a scene object 
+            Scene scene = new Scene(root, 600, 500);  
+
+
+
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(InicioController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }    
 
     /**
